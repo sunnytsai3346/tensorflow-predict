@@ -1,0 +1,17 @@
+<p>projector-calibration works!</p>
+<div class="container">
+    <h2>Projector Calibration</h2>
+    <button (click)="trainModel()">Train Model</button>
+  
+    <div>
+      <label>Distorted X:</label>
+      <input type="number" [(ngModel)]="distortedX" />
+      <label>Distorted Y:</label>
+      <input type="number" [(ngModel)]="distortedY" />
+      <button (click)="predict(distortedX, distortedY)">Predict</button>
+    </div>
+  
+    <div *ngIf="correctedCoords">
+      <p>Corrected Coordinates: {{ correctedCoords }}</p>
+    </div>
+  </div>

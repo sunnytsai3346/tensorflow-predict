@@ -1,0 +1,21 @@
+<p>chatbot works!</p>
+<div class="chat-container">
+    <div class="messages">
+      <div
+        *ngFor="let msg of messages"
+        [ngClass]="{ 'user-message': msg.user, 'bot-message': !msg.user }"
+      >
+        <span class="message-text">{{ msg.text }}</span>
+      </div>
+    </div>
+  
+    <div class="chat-input">
+      <input
+        [(ngModel)]="userMessage"
+        (keyup.enter)="sendMessage()"
+        placeholder="Type your message..."
+        class="input-box"
+      />
+      <button (click)="sendMessage()" class="send-button">Send</button>
+    </div>
+  </div>

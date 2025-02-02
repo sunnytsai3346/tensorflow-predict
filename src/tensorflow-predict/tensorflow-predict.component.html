@@ -1,0 +1,24 @@
+<div class="tensorflow-container">
+    <h2>TensorFlow.js - 2D Data Predictions</h2>
+
+   <!-- Mat Slide Toggle to Switch Model -->
+   <button (click)="toggleModel()">
+    Switch to {{ useSimpleModel ? 'Complex' : 'Simple' }} Model
+  </button>
+
+  <p>Currently using: <strong>{{ useSimpleModel ? 'Simple' : 'Complex' }}</strong> Model</p>
+
+  
+    <button (click)="trainModel()">Train Model</button>
+    <br /><br />
+  
+    <label for="input1">Input 1:</label>
+    <input type="number" id="input1" [(ngModel)]="input1" />
+    <label for="input2">Input 2:</label>
+    <input type="number" id="input2" [(ngModel)]="input2" />
+    <button (click)="predict([input1, input2])">Predict</button>
+  
+    <p *ngIf="predictionResult !== null">
+      Prediction Result: {{ predictionResult }}
+    </p>
+  </div>

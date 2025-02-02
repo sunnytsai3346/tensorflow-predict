@@ -1,0 +1,28 @@
+<div class="translation-container">
+    <h1>LibreTranslate Demo</h1>
+  
+    <label for="sourceLang">Source Language:</label>
+    <select [(ngModel)]="sourceLanguage" id="sourceLang">
+      <option *ngFor="let lang of languages" [value]="lang.code">{{ lang.name }}</option>
+    </select>
+  
+    <label for="text">Text to Translate:</label>
+    <textarea
+      id="text"
+      [(ngModel)]="textToTranslate"
+      placeholder="Enter text here..."
+      rows="4"
+      cols="50"
+    ></textarea>
+  
+    <label for="targetLang">Target Language:</label>
+    <select [(ngModel)]="targetLanguage" id="targetLang">
+      <option *ngFor="let lang of languages" [value]="lang.code">{{ lang.name }}</option>
+    </select>
+  
+    <button (click)="onTranslate()">Translate</button>
+  
+    <h2>Translated Text:</h2>
+    <p>{{ translatedText }}</p>
+  </div>
+  
