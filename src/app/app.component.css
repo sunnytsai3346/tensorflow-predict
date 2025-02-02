@@ -1,0 +1,25 @@
+.app-container {
+    text-align: center;
+    margin: 20px;
+  }
+  
+  .button-group {
+    margin: 20px 0;
+  }
+  
+  button {
+    margin: 5px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: #e0e0e0;
+  }
+  
+  .component-container {
+    margin-top: 20px;
+    border-top: 2px solid #ccc;
+    padding-top: 20px;
+  }
