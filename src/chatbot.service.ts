@@ -5,19 +5,13 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class ChatbotService {
-  private dialogflowUrl = 'https://dialogflow.googleapis.com/v2/projects/your-project-id/agent/sessions/session-id:detectIntent';
+  //private dialogflowUrl = 'https://dialogflow.googleapis.com/v2/projects/your-project-id/agent/sessions/session-id:detectIntent';
+  private rasaApiUrl = 'http://localhost:5005/webhooks/rest/webhook';
 
   constructor(private http: HttpClient) {}
 
   sendMessage(message: string) {
-    const body = {
-      queryInput: {
-        text: {
-          text: message,
-          languageCode: 'en'
-        }
-      }
-    };
-    return this.http.post(this.dialogflowUrl, body);
+    const payload = { message: message, sender: 'user' };
+    return this.http.post(this.rasaApiUrl, payload);
   }
 }

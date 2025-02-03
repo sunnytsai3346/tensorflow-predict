@@ -10,8 +10,8 @@ import { FormsModule } from '@angular/forms';
   templateUrl: './chatbot.component.html',
   styleUrl: './chatbot.component.css'
 })
-export class ChatbotComponent {
-  messages: { user: boolean; text: string }[] = [];
+export class ChatbotComponent {  
+  messages: { sender: string, text: string }[] = [];
   userMessage: string = '';
 
   constructor(private chatbotService: ChatbotService) {}
@@ -20,19 +20,24 @@ export class ChatbotComponent {
   sendMessage() {
     if (!this.userMessage.trim()) return;
 
-    this.messages.push({ user: true, text: this.userMessage });
-     this.chatbotService.sendMessage(this.userMessage).subscribe((response: any) => {
-       const botMessage = response.queryResult.fulfillmentText;
-       this.messages.push({ user: false, text: botMessage });
-     });
+    // Add user's message
+    this.messages.push({ sender: 'user', text: this.userMessage });
+    // Send message to Rasa API
 
-    // Simulate bot response
-    setTimeout(() => {
-      this.messages.push({
-        user: false,
-        text: `Bot says: "${this.userMessage}"`, // Echo user input as bot response
+    this.chatbotService.sendMessage(this.userMessage).subscribe((response: any) => {
+      response.forEach((msg: any) => {
+        console.log("msg");
+        this.messages.push({ sender: 'bot', text: msg.text });
       });
-    }, 1000);
+    });
+
+    // // Simulate bot response
+    // setTimeout(() => {
+    //   this.messages.push({
+    //     user: false,
+    //     text: `Bot says: "${this.userMessage}"`, // Echo user input as bot response
+    //   });
+    // }, 1000);
 
     this.userMessage = '';
   }
