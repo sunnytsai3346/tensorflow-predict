@@ -14,8 +14,12 @@
   
   textarea,
   select {
-    width: 100%;
-    margin-bottom: 15px;
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+    margin-right: 10px;
   }
   
   button {

@@ -16,12 +16,17 @@ export class TranslationComponent {
   targetLanguage: string = 'es'; // Default to Spanish
   sourceLanguage: string = 'en'; // Default to English
   languages = [
-    { code: 'en', name: 'English' },
+    { code: 'de', name: 'German' },
+    { code: 'en', name: 'English' },    
     { code: 'es', name: 'Spanish' },
     { code: 'fr', name: 'French' },
-    { code: 'de', name: 'German' },
-    { code: 'zh', name: 'Chinese' },
-    { code: 'ar', name: 'Arabic' },
+    { code: 'hi', name: 'Hindi' },
+    { code: 'it', name: 'Italian' },    
+    { code: 'ja', name: 'Japanese' },    
+    { code: 'ko', name: 'Korean' },    
+    { code: 'ru', name: 'Russ' },    
+    { code: 'zh', name: 'Chinese' },    
+    
   ];
   constructor(private translationService: TranslationService) {}
   //constructor() {}
