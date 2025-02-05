@@ -228,10 +228,11 @@
       <h1>Hello, {{ title }}</h1>
       <p>Congratulations! Your app is running. 🎉</p>
       <div class="button-group">
-        <button (click)="showComponent('tensorflowPredict')">Demo Button 1: TensorFlow Predict</button>        
-        <button (click)="showComponent('projectorCalibration')">Demo Button 2: Projector Calibration</button>
+        <button (click)="showComponent('tensorflowPredict')">Demo Button 1: 2D TensorFlow Predict</button>        
+        <button (click)="showComponent('projectorCalibration')">Demo Button 2: Simulate Disorder Predict</button>
         <button (click)="showComponent('ChatBot')">Demo Button 3: ChatBot</button>
-        <button (click)="showComponent('Translation')">Demo Button 4: Translation</button>
+        <button (click)="showComponent('Translation')">Demo Button 4: LibreTranslation</button>
+        <!--<button (click)="showComponent('WhisperAsr')">Demo Button 5: WhisperAsr Speech Recognization</button>-->
       </div>
     
       <div class="component-container">
@@ -239,6 +240,7 @@
         <app-projector-calibration *ngIf="currentComponent === 'projectorCalibration'"></app-projector-calibration>
         <app-chatbot *ngIf="currentComponent === 'ChatBot'"></app-chatbot>
         <app-translation *ngIf="currentComponent === 'Translation'"></app-translation>
+        <!--<app-whisper-asr *ngIf="currentComponent === 'WhisperAsr'"></app-whisper-asr>-->
 
       </div>
     </div>

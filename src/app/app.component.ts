@@ -8,16 +8,17 @@ import { CommonModule } from '@angular/common';
 import { ChatbotComponent } from '../chatbot/chatbot.component';
 import { TranslationComponent } from "../translation/translation.component";
 import { HttpClient } from '@angular/common/http';
+import { WhisperAsrComponent } from '../whisper-asr/whisper-asr.component';
 
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, TensorflowPredictComponent, FormsModule, ProjectorCalibrationComponent, CommonModule, ChatbotComponent, TranslationComponent  ],
+  imports: [RouterOutlet, TensorflowPredictComponent, FormsModule, ProjectorCalibrationComponent, CommonModule, ChatbotComponent, TranslationComponent ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
 export class AppComponent {
-  title = 'TensorFlow Demo App';
+  title = 'Machine Learning Demo App ';
   currentComponent: string | null = null; // Tracks the currently displayed component
   constructor(private http: HttpClient) {}
   ngOnInit(): void {

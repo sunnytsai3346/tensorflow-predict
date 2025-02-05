@@ -1,0 +1,28 @@
+<p>whisper-asr works!</p>
+<mat-card class="whisper-card">
+    <mat-card-header>
+      <mat-card-title>🎙 Whisper ASR - Speech to Text</mat-card-title>
+    </mat-card-header>
+  
+    <mat-card-content>
+      <div class="button-container">
+        <button mat-raised-button color="primary" (click)="startRecording()" [disabled]="isRecording">
+          🎤 Start Recording
+        </button>
+        <button mat-raised-button color="warn" (click)="stopRecording()" [disabled]="!isRecording">
+          ⏹ Stop Recording
+        </button>
+      </div>
+  
+      <div class="spinner-container" *ngIf="isLoading">
+        <mat-spinner diameter="40"></mat-spinner>
+        <p>Transcribing...</p>
+      </div>
+  
+      <mat-card *ngIf="transcription" class="result-card">
+        <h3>Transcription:</h3>
+        <p>{{ transcription }}</p>
+      </mat-card>
+    </mat-card-content>
+  </mat-card>
+  
