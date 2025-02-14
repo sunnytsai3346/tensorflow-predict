@@ -1,0 +1,17 @@
+<mat-card>
+    <h2>Upload Image for TensorFlow Analysis</h2>
+
+     <!-- File input -->
+    <input type="file" (change)="onFileSelected($event)" />
+    <!-- Preview Uploaded Image -->
+    <img *ngIf="imageUrl" [src]="imageUrl" alt="Uploaded Image" width="300" />
+
+    <!-- Upload Button -->
+    <button mat-raised-button color="primary" (click)="onUpload()">Upload</button>
+    
+    <!-- Loading indicator -->
+    <p *ngIf="isLoading" style="color: blue;">Uploading...</p>
+    
+    <!-- Prediction Result with Dynamic Styling -->
+    <p *ngIf="predictionResult " [ngStyle]="getPredictionStyle()">Prediction: {{ predictionResult }}</p>
+  </mat-card>

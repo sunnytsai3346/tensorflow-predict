@@ -228,17 +228,21 @@
       <h1>Hello, {{ title }}</h1>
       <p>Congratulations! Your app is running. 🎉</p>
       <div class="button-group">
-        <button (click)="showComponent('tensorflowPredict')">Demo Button 1: TensorFlow Predict</button>        
-        <button (click)="showComponent('projectorCalibration')">Demo Button 2: Projector Calibration</button>
-        <button (click)="showComponent('ChatBot')">Demo Button 3: ChatBot</button>
-        <button (click)="showComponent('Translation')">Demo Button 4: Translation</button>
+        <button (click)="showComponent('tensorflowPredict')">Demo Button 1: 2D TensorFlow Predict</button>        
+        <button (click)="showComponent('projectorCalibration')">Demo Button 2: Simulate Disorder Predict</button>
+        <button (click)="showComponent('TensorflowOpencvDemo')">Demo Button 3: Tensorflow Predict Opencv image</button>
+        <button (click)="showComponent('ChatBot')">Demo Button 4: ChatBot</button>
+        <button (click)="showComponent('Translation')">Demo Button 5: LibreTranslation</button>
+        
       </div>
     
       <div class="component-container">
         <app-tensorflow-predict *ngIf="currentComponent === 'tensorflowPredict'"></app-tensorflow-predict>        
         <app-projector-calibration *ngIf="currentComponent === 'projectorCalibration'"></app-projector-calibration>
+        <app-tensorflow-opencv-demo *ngIf="currentComponent === 'TensorflowOpencvDemo'"></app-tensorflow-opencv-demo>
         <app-chatbot *ngIf="currentComponent === 'ChatBot'"></app-chatbot>
         <app-translation *ngIf="currentComponent === 'Translation'"></app-translation>
+        
 
       </div>
     </div>
